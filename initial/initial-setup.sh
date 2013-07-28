@@ -9,4 +9,5 @@ pushd $(dirname $0) &>/dev/null
 ./git-setup.sh
 ./bash-setup.sh
 ./x-setup.sh
+./emacs-setup.sh
 popd &>/dev/null
