@@ -12,13 +12,13 @@
 
 (setq gnus-parameters
   ;;Use notthere id for all gmane news group postings
-  '((".*rackspace\\.com.*"
+  '((".*rackspace.*"
      (posting-style
       (address "william.kelly@rackspace.com")
       (name "William Kelly")
       (eval (setq message-sendmail-extra-arguments '("-a" "work")))
       (user-mail-address "william.kelly@rackspace.com")))
-    (".*gmail\\.com.*"
+    (".*gmail.*"
      (posting-style
       (address "the.william.kelly@gmail.com")
       (name "William Kelly")
