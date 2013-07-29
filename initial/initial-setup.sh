@@ -10,4 +10,6 @@ pushd $(dirname $0) &>/dev/null
 ./bash-setup.sh
 ./x-setup.sh
 ./emacs-setup.sh
+./offlineimap-setup.sh
+./dovecot-setup.sh
 popd &>/dev/null

@@ -1,0 +1,27 @@
+[general]
+pythonfile = ~/.offlineimap.py
+accounts = main
+
+[Account main]
+localrepository = main-local
+remoterepository = gmail
+status_backend = sqlite
+
+[Repository main-local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository gmail]
+type = IMAP
+remotehost = imap.gmail.com
+remoteport = 993
+nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
+                               re.sub ('sent_mail', 'sent',
+                               re.sub ('starred', 'flagged',
+                               re.sub (' ', '_', foldername.lower()))))
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remoteusereval = get_user_emacs("imap.gmail.com", "993")
+remotepasseval = get_password_emacs("imap.gmail.com", "993")
+
