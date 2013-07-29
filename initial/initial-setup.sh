@@ -12,4 +12,5 @@ pushd $(dirname $0) &>/dev/null
 ./emacs-setup.sh
 ./offlineimap-setup.sh
 ./dovecot-setup.sh
+./msmtp-setup.sh
 popd &>/dev/null
