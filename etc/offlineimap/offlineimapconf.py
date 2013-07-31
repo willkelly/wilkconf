@@ -8,7 +8,6 @@ def get_output(cmd):
     (output, errout) = pipe.communicate()
     assert pipe.returncode == 0
     thing = output.strip().split("\n")[-1].strip('"')
-    print thing
     return thing
 
 

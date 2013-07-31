@@ -1,0 +1,7 @@
+#!/bin/bash
+
+WILKCONF="${WILKCONF:-${HOME}/wilkconf}"
+
+source "${WILKCONF}/lib/authinfo.sh"
+
+get-auth-info "${1}" "${2}" | perl -ne '{print "$1\n" if m/login ([^ \n]+)/}'

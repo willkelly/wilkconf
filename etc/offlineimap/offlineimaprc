@@ -49,4 +49,6 @@ nametrans = lambda folder: re.sub('sent_items', 'sent',
                            #re.sub('deleted_items', 'trash',
                            re.sub(' ', '_', folder.lower())))
 
-folderfilter = lambda folder: folder.lower() not in ['calendar', 'contacts', 'deleted items', 'drafts']
+folderfilter = lambda folder: folder.lower() not in [
+	     'calendar', 'contacts', 'deleted items', 'drafts',
+	     'archives', 'old staff' '2013' 'journal' ]

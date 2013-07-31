@@ -8,9 +8,13 @@ if ! pgrep gpg-agent >/dev/null; then
     gpg-agent --daemon --enable-ssh-support \
         --write-env-file "${HOME}/.gpg-agent-info" &>/dev/null
 fi
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
+
+for f in "${HOME}/.gpg-agent-info" "${HOME}//.gnupg/gpg-agent-info-${HOSTNAME}"; do
+    if [ -f "${f}" ]; then
+	. "${f}"
     export GPG_AGENT_INFO
     export SSH_AUTH_SOCK
-fi
+    fi
+done
+
 ## END ENCRYPTION BLOCK
