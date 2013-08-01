@@ -1,6 +1,5 @@
 (setq mm-discouraged-alternatives '("text/html" "text/richtext")) ; prefer plaintext
 
-
 ;; some smtp stuff stolen from http://www.emacswiki.org/emacs/GnusMSMTP
 
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
