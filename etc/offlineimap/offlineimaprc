@@ -26,10 +26,6 @@ holdconnectionopen = yes
 type = IMAP
 remotehost = imap.gmail.com
 remoteport = 993
-nametrans = lambda foldername: re.sub ('^\[gmail\]', 'bak',
-                               re.sub ('sent_mail', 'sent',
-                               re.sub ('starred', 'flagged',
-                               re.sub (' ', '_', foldername.lower()))))
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
@@ -44,11 +40,6 @@ remoteusereval = get_user_emacs("rackermail.rackspace.com", "993")
 remotepasseval  = get_password_emacs("rackermail.rackspace.com", "993")
 remoteport = 993
 keepalive = 60
-nametrans = lambda folder: re.sub('sent_items', 'sent',
-                           re.sub('notes', 'flagged',
-                           #re.sub('deleted_items', 'trash',
-                           re.sub(' ', '_', folder.lower())))
-
 folderfilter = lambda folder: folder.lower() not in [
 	     'calendar', 'contacts', 'deleted items', 'drafts',
 	     'archives', 'old staff' '2013' 'journal' ]
