@@ -1,0 +1,1 @@
+declare -A services=(["workimap"]="rackermail.rackspace.com" ["worksmtp"]="rackermail.cannot.name" ["test 1"]="other")
