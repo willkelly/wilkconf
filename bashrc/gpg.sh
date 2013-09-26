@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## BEGIN ENCRYPTION BLOCK
-GPG_OPTS=${GPG_OPTS:-"-q -e"}
+export GPG_OPTS=${GPG_OPTS:-"-q -e"}
 GPG_TTY=$(tty)
 export GPG_TTY
 if ! pgrep gpg-agent >/dev/null; then
@@ -9,7 +9,7 @@ if ! pgrep gpg-agent >/dev/null; then
         --write-env-file "${HOME}/.gpg-agent-info" &>/dev/null
 fi
 
-for f in "${HOME}/.gpg-agent-info" "${HOME}//.gnupg/gpg-agent-info-${HOSTNAME}"; do
+for f in "${HOME}/.gpg-agent-info" "${HOME}/.gnupg/gpg-agent-info-${HOSTNAME}"; do
     if [ -f "${f}" ]; then
 	. "${f}"
     export GPG_AGENT_INFO
@@ -18,3 +18,4 @@ for f in "${HOME}/.gpg-agent-info" "${HOME}//.gnupg/gpg-agent-info-${HOSTNAME}";
 done
 
 ## END ENCRYPTION BLOCK
+
