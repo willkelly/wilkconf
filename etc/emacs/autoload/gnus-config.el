@@ -55,3 +55,32 @@
 	  (setq message-sendmail-extra-arguments (list '"-a" account)))))) ; the original form of this script did not have the ' before "a" which causes a very difficult to track bug --frozencemetery
 (setq message-sendmail-envelope-from 'header)
 (add-hook 'message-send-mail-hook 'cg-feed-msmtp)
+
+(require 'epg-config)
+ (setq mml2015-use 'epg
+
+       mml2015-verbose t
+       epg-user-id "William Kelly <the.william.kelly@gmail.com>"
+       mml2015-encrypt-to-self t
+       mml2015-always-trust nil
+       mml2015-cache-passphrase t
+       mml2015-passphrase-cache-expiry '36000
+       mml2015-sign-with-sender t
+
+       gnus-message-replyencrypt t
+       gnus-message-replysign t
+       gnus-message-replysignencrypted t
+       gnus-treat-x-pgp-sig t
+
+;;       mm-sign-option 'guided
+;;       mm-encrypt-option 'guided
+       mm-verify-option 'always
+       mm-decrypt-option 'always
+
+       gnus-buttonized-mime-types
+       '("multipart/alternative"
+         "multipart/encrypted"
+         "multipart/signed")
+
+      epg-debug t ;;  then read the *epg-debug*" buffer
+)
