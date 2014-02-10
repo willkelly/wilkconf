@@ -1,0 +1,6 @@
+(setq org-caldav-url "https://rackermail.cannot.name/users")
+(setq org-caldav-inbox "/home/will/doc/caldav.org")
+(setq org-caldav-files '("/home/will/doc/agenda.org"))
+(setq org-caldav-calendar-id "william.kelly%40rackspace.com/calendar")
+(setq org-caldav-uuid-extension ".EML")
+;(setq org-icalendar-timezone "america/chicago")
