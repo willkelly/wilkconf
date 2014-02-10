@@ -14,7 +14,7 @@ status_backend = sqlite
 
 [Repository gmail-local]
 type = IMAP
-preauthtunnel = /usr/lib/dovecot/imap -o mail_location=maildir:$HOME/Mail/the.william.kelly@gmail.com
+preauthtunnel =	/usr/lib/dovecot/imap -o mail_location=maildir:$HOME/Maildir/the.william.kelly@gmail.com
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'sent':    '[Gmail]/Sent Mail',
                             'flagged': '[Gmail]/Starred',
@@ -25,7 +25,7 @@ holdconnectionopen = yes
 
 [Repository work-local]
 type = IMAP
-preauthtunnel = USER=william.kelly@rackspace.com /usr/lib/dovecot/imap
+preauthtunnel = /usr/lib/dovecot/imap -o mail_location=maildir:$HOME/Maildir/william.kelly@rackspace.com
 holdconnectionopen = yes
 
 [Repository gmail-remote]
