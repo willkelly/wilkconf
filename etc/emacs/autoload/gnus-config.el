@@ -26,17 +26,16 @@
       (user-mail-address "the.william.kelly@gmail.com")))))
 
 (setq gnus-select-method '(nntp "news.gnus.org"))
-(setq gnus-secondary-select-methods
-      '((nnimap "gmail"
-                (nnimap-stream shell)
-                (nnimap-shell-program
+(setq gnus-secondary-select-methods '((nnimap "gmail"
+		(nnimap-stream shell)
+		(nnimap-shell-program
 		 "USER=the.william.kelly@gmail.com
-                 /usr/lib/dovecot/imap"))
+		 /usr/lib/dovecot/imap"))
 	(nnimap "rackspace"
 		(nnimap-stream shell)
 		(nnimap-shell-program
 		 "USER=william.kelly@rackspace.com
-                 /usr/lib/dovecot/imap"))))
+		 /usr/lib/dovecot/imap"))))
 
 ;; Choose account label to feed msmtp -a option based on From header in Message buffer;
 ;; This function must be added to message-send-mail-hook for on-the-fly change of From address
@@ -84,3 +83,5 @@
 
       epg-debug t ;;  then read the *epg-debug*" buffer
 )
+
+(add-hook 'message-setup-hook 'mml-secure-sign-pgpmime)
