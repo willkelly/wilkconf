@@ -8,7 +8,7 @@
 (setq mail-host-address "gmail.com")
 (setq user-full-name "William Kelly")
 (setq user-mail-address "the.william.kelly@gmail.com")
-
+(setq message-kill-buffer-on-exit t)
 ;; using cg-feed-msmtp to set msmtp stuff, using posting-style to set from address
 (setq gnus-parameters
   ;;Use notthere id for all gmane news group postings
