@@ -11,3 +11,17 @@
 (defun offlineimap-get-login (host port)
   "helper for offlineimap"
   (offlineimap-get host port "login"))
+
+; Shortcut for offlineimap.el running
+; Stolen from Bas
+(eval-after-load "gnus"
+  '(progn
+     (define-key gnus-group-mode-map (kbd "v g")
+       (lambda ()
+         (interactive)
+         (offlineimap)))))
+
+;; Add a hook to get news after offlineimap is finished
+(add-hook 'offlineimap-event-hooks (lambda (msg-type &optional action)
+                                     (if (equal "finished\n" msg-type)
+                                         (gnus-group-get-new-news))))
