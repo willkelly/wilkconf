@@ -35,7 +35,9 @@
 		(nnimap-stream shell)
 		(nnimap-shell-program
 		 "USER=william.kelly@rackspace.com
-		 /usr/lib/dovecot/imap"))))
+		 /usr/lib/dovecot/imap"))
+	(nntp "news.gmane.org")
+	(nntp "news.gwene.org")))
 
 ;; Choose account label to feed msmtp -a option based on From header in Message buffer;
 ;; This function must be added to message-send-mail-hook for on-the-fly change of From address
