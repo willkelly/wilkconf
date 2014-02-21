@@ -57,4 +57,4 @@ remoteport = 993
 keepalive = 60
 folderfilter = lambda folder: folder.lower() not in [
 	     'calendar', 'contacts', 'deleted items', 'drafts',
-	     'archives', 'old staff' '2013' 'journal' ]
+	     'archives', 'old staff' '2013' 'journal'] and folder.lower().find("old") == -1
