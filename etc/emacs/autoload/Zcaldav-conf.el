@@ -5,6 +5,6 @@
 (setq org-caldav-calendar-id "william.kelly%40rackspace.com/calendar")
 (setq org-caldav-uuid-extension ".EML")
 (setq org-import-icalendar-filename  org-caldav-inbox)
-
+(setq org-agenda-files '("/home/will/doc/org/agenda/"))
 ;(setq org-caldav-sync-changes-to-org 'all)
 ;(setq org-icalendar-timezone "america/chicago")
