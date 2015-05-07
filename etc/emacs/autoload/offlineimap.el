@@ -1,6 +1,6 @@
 (require 'netrc)
 (defun offlineimap-get (host port token)
-  (let* ((netrc (netrc-parse (expand-file-name "~/.authinfo.gpg")))
+  (let* ((netrc (netrc-parse (expand-file-name "~/authinfo.gpg")))
 	 (hostentry (netrc-machine netrc host port port)))
     (when hostentry (netrc-get hostentry token))))
 
